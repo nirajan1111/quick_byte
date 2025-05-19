@@ -1,0 +1,74 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 250 33% 98%;
+    --foreground: 250 14% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 250 14% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 250 14% 15%;
+
+    --primary: 252 85% 75%;
+    --primary-foreground: 250 33% 98%;
+
+    --secondary: 252 30% 85%;
+    --secondary-foreground: 250 14% 15%;
+
+    --muted: 250 10% 90%;
+    --muted-foreground: 250 5% 45%;
+
+    --accent: 252 30% 85%;
+    --accent-foreground: 250 14% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 250 33% 98%;
+
+    --border: 250 10% 85%;
+    --input: 250 10% 85%;
+    --ring: 252 85% 75%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  .cuisine-card {
+    @apply flex flex-col items-center justify-center p-4 bg-white rounded-xl shadow-md border border-transparent transition-all duration-300 cursor-pointer hover:shadow-lg;
+  }
+
+  .cuisine-card.selected {
+    @apply border-quickbite-purple bg-quickbite-purple-soft shadow-lg;
+  }
+
+  .btn-primary {
+    @apply bg-quickbite-purple text-white font-medium py-3 px-6 rounded-full hover:bg-quickbite-purple-dark transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-quickbite-purple-light focus:ring-offset-2 shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-quickbite-purple-dark font-medium py-3 px-6 rounded-full border border-quickbite-purple hover:bg-quickbite-purple-soft transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-quickbite-purple-light focus:ring-offset-2 shadow-sm;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-muted bg-white focus:outline-none focus:border-quickbite-purple focus:ring-1 focus:ring-quickbite-purple transition-all duration-200;
+  }
+
+  .restaurant-card {
+    @apply bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl border border-muted;
+  }
+}
